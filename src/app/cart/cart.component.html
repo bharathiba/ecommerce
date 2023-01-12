@@ -1,0 +1,76 @@
+<div class="container d-flex flex-column">
+    <ng-container *ngFor="let data of products;let i=index">
+        <div class="card shadow">
+            <div class="row col-12">
+                <div class="col-sm-3 d-flex">
+                    <img src={{data.images[0]}}>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                    <div class="col">
+                        <p class="ml-5 dis"><b>{{data.description}}</b></p>
+                        <p class="ml-5 price"><b>{{data.price | currency :'INR'}}</b></p>
+                    </div>
+                </div>
+                <div class="col-sm-3 d-flex justify-content-center align-items-center">
+                    <div class="row-3">
+                        <button class="btn btn-danger ml-4" (click)="delete(i)">delete</button><br>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <button class="btn btn-outline-secondary" (click)="minus(i)">-</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success">{{data.qty}}</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-outline-secondary" (click)="plus(i)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="container">
+    <div class="card shadow">
+        <div class="row col-12">
+            <div class="col-sm-3 mt-3 d-flex">
+                <h3>Total Amount : {{grandTotal}}</h3>
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center align-items-center">
+            </div>
+            <div class="col-sm-3 d-flex justify-content-center align-items-center">
+                <button class="btn btn-primary ml-3 mb-3 mt-3" printSectionId="printId" ngxPrint>Invoice</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div hidden class="container" id="printId">
+    <div class="card">
+        <table class="table table-stripped border">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>S.NO</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let job of products;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{job.description}}</td>
+                    <td>{{job.price}}</td>
+                    <td>{{job.qty}}</td>
+                    <td>{{job.price*job.qty}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="ml-auto">
+            <p><b>Total Amount : <b>{{grandTotal |currency :'INR'}}</b></b>
+            </p>
+        </div>
+    </div>
+</div>

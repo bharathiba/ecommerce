@@ -1,0 +1,20 @@
+<div class="container d-flex flex-column">
+    <ng-container *ngFor="let data of dataArr">
+        <div class="card shadow">
+            <div class="row col-12">
+                <div class="col-sm-3 d-flex">
+                    <img src={{data.images[0]}}>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                    <div class="col">
+                        <p class="ml-5 dis"><b>{{data.description}}</b></p>
+                        <p class="ml-5 price"><b>{{data.price | currency :'INR'}}</b></p>
+                    </div>
+                </div>
+                <div class="col-sm-3 d-flex justify-content-center align-items-center">
+                    <button class="btn btn-success" (click)="addCart(data)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

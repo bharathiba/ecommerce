@@ -1,0 +1,39 @@
+.logo {
+    font-size: 30px;
+    font-style: italic;
+    color: aliceblue;
+}
+
+.cart {
+    font-size: 30px;
+    animation: display 5s infinite linear;
+}
+
+@media (min-width:320px)and(max-width:370px) {
+    .logo {
+        font-size: 25px;
+    }
+}
+@keyframes display {
+
+    0% {
+        color: rgb(251, 255, 0);
+    }
+    25% {
+        color: rgb(241, 243, 248);
+    }
+    50% {
+color: rgb(255, 251, 0);
+    }
+    75% {
+        color: rgb(233, 240, 233);
+    }
+    100% {
+        color: rgb(255, 238, 0);
+    }
+   
+}
+.fa{
+    font-size: larger;
+    color: white;
+}

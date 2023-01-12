@@ -1,0 +1,50 @@
+.card img {
+    max-width: 200px;
+    height: 100px;
+    margin-bottom: 15px;
+    margin-top: 3px;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.container {
+    justify-content: center;
+}
+
+.card {
+    border-radius: 40px;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.card button {
+    text-align: center;
+}
+
+.price :hover {
+    color: green;
+}
+
+.dis :hover {
+    color: orange;
+}
+
+@media(min-width: 768px) {
+    .card img {
+        max-width: 100px;
+        height: 100px;
+        margin-bottom: 2px;
+        transition: 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .card img {
+        max-width: 200px;
+        height: 100px;
+        margin-bottom: 2px;
+        transition: 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+}
